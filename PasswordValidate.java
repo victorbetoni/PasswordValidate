@@ -29,9 +29,8 @@ public class ValidadorDeSenha {
 		boolean hasNumber = false;
 		boolean hasSpecialDigit = false;
 		boolean hasSpace = false;
-		boolean valid = false;
 		
-		for(char ch : pass.toCharArray()) {
+		for(char ch : pass) {
 			if(!Character.isAlphabetic(ch) && !Character.isDigit(ch) ){
 				hasSpecialDigit = true;
 			}
@@ -42,9 +41,6 @@ public class ValidadorDeSenha {
 				hasSpace = true;
 			}
 		}
-		if(hasNumber && hasSpecialDigit && !hasSpace) {
-			valid = true;
-		}
-		return valid;
+		return hasNumber && hasSpecialDigit && !hasSpace;
 	}
 }
